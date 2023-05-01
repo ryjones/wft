@@ -13,5 +13,6 @@ jobs:
     steps:
       - name: Print
         run: |
-          echo ${{ fromJSON('["ubuntu-latest", "ubuntu-20.04"]')[github.repository != 'daisy-row/wft'] }}
-          echo ${{ fromJSON('["ubuntu-latest", "ubuntu-20.04"]')[github.repository == 'daisy-row/wft'] }}
+          set -x
+          echo ${{ fromJSON('[["ubuntu-latest", "ubuntu-20.04"],["foo","bar"]]')[github.repository != 'daisy-row/wft'] }}
+          echo ${{ fromJSON('[["ubuntu-latest", "ubuntu-20.04"],["foo","bar"]]')[github.repository == 'daisy-row/wft'] }}
