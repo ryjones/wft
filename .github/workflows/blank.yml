@@ -12,4 +12,6 @@ jobs:
     runs-on: ${{ fromJSON('["ubuntu-latest", "ubuntu-20.04"]')[github.repository != 'daisy-row/wft'] }}
     steps:
       - name: Print
-        run: env | sort
+        run: |
+          echo ${{ fromJSON('["ubuntu-latest", "ubuntu-20.04"]')[github.repository != 'daisy-row/wft'] }}
+          echo ${{ fromJSON('["ubuntu-latest", "ubuntu-20.04"]')[github.repository == 'daisy-row/wft'] }}
